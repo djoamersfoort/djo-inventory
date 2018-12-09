@@ -89,9 +89,9 @@ def v1_delete_article_by_id(request, article):
 
 
 @require_http_methods(['GET', 'POST', 'DELETE'])
-def v1_item_by_id(request, itemid):
+def v1_item_by_id(request, item_id):
     try:
-        item = Item.objects.get(pk=itemid)
+        item = Item.objects.get(pk=item_id)
     except Item.DoesNotExist:
         return JsonResponse(data={'result': 'No such item!'}, status=404)
 
