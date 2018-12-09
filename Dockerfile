@@ -11,7 +11,7 @@ COPY docker/docker-entrypoint.sh /
 RUN apk update && \
     apk add nginx mariadb-dev zlib-dev gcc musl-dev jpeg-dev freetype-dev && \
     pip3 install --no-cache-dir -r /srv/inventory/requirements.txt && \
-    rm -f /srv/inventory/inventory/settings.py
+    rm -f /srv/inventory/inventory/settings.py && \
     apk del gcc musl-dev
 
 WORKDIR /srv
