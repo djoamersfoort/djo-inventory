@@ -50,14 +50,14 @@ curl http://localhost:8000/api/v1/items
 ```
 
 
-## GET /api/v1/article/\<id\>
+## GET /api/v1/item/\<id\>
 input: none
 
 output:
 ```json
 {
   "result": "ok",
-  "article": {
+  "item": {
      "id": "<id>",
      "name": "<Naam van het item>",
      "description": "<Omschrijving van het item>",

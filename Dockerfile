@@ -3,6 +3,11 @@ FROM python:3.6-alpine
 # Set the file maintainer (your name - the file's author)
 MAINTAINER Ronald Moesbergen
 
+COPY inventory /srv/inventory/inventory/
+COPY manage.py requirements.txt /srv/inventory/
+COPY docker/nginx.conf /etc/nginx/nginx.conf
+COPY docker/docker-entrypoint.sh /
+
 RUN apk update && \
     apk add nginx mariadb-dev zlib-dev gcc musl-dev jpeg-dev freetype-dev && \
     pip3 install --no-cache-dir -r /srv/inventory/requirements.txt && \
@@ -16,10 +21,5 @@ EXPOSE 80
 
 # Copy entrypoint script into the image
 WORKDIR /srv/inventory
-
-COPY inventory /srv/inventory/inventory/
-COPY manage.py requirements.txt /srv/inventory/
-COPY docker/nginx.conf /etc/nginx/nginx.conf
-COPY docker/docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
