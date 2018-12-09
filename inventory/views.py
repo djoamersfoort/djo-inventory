@@ -1,31 +1,7 @@
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET, require_http_methods
 from .models import Item
-
-"""
-@require_POST
-@json_call
-def v1_login(request):
-    params = request.json
-    if 'username' not in params or 'password' not in params:
-        return JsonResponse(data={'result': 'required field is missing! {0}'.format(params)}, status=400)
-
-    user = authenticate(request, username=params['username'], password=params['password'])
-    if user:
-        # Check for existing auth token for this user
-        try:
-            authtoken = AuthToken.objects.get(pk=user)
-        except AuthToken.DoesNotExist:
-            # Create new token and save
-            token = str(uuid.uuid4()).replace('-', '')
-            authtoken = AuthToken(user=user, token=token, expires=datetime.now() + timedelta(hours=24))
-            authtoken.save()
-    else:
-        return JsonResponse(data={'result': 'permission denied!'}, status=401)
-
-    result = {'result': 'ok', 'token': authtoken.token}
-    return JsonResponse(data=result)
-"""
+from django.db.models import Q
 
 
 @require_GET
@@ -65,28 +41,29 @@ def v1_get_item_by_id(request, item):
     return JsonResponse(data=result)
 
 
-"""
-@permission_required('inventory.change_article')
-@json_call
-def v1_post_item_by_id(request, item):
-    params = request.json
-    if 'subject' not in params or 'body' not in params:
-        return JsonResponse(data={'result': 'required field is missing! {0}'.format(params)}, status=401)
+@require_GET
+def v1_item_search(request, keyword):
+    try:
+        items = Item.objects.get(Q(name__icontains=keyword) | Q(description__icontains=keyword))
+    except Item.DoesNotExist:
+        return JsonResponse({'result': 'No items were found!'})
 
-    article.subject = params['subject']
-    article.body = params['body']
-    if 'author' in params:
-        article.author = params['author']
-    article.save()
-    return JsonResponse(data={'result': 'ok'})
+    results = {}
+    for item in items:
+        results[item.id] = {
+            "id": item.id,
+            "name": item.name,
+            "description": item.description,
+            "location": item.location.name,
+            "location_description": item.location.description,
+            "location_id": item.location.id,
+            "url": item.url
+        }
 
+    json_result = {'result': 'ok',
+                   'items': results}
 
-@permission_required('inventory.delete_article')
-def v1_delete_article_by_id(request, article):
-    article.delete()
-    return JsonResponse(data={'result': 'ok'})
-
-"""
+    return  JsonResponse(data=json_result)
 
 
 @require_http_methods(['GET', 'POST', 'DELETE'])
@@ -105,22 +82,3 @@ def v1_item_by_id(request, item_id):
     else:
         # Impossible
         return JsonResponse(data={'result': 'huh?'})
-
-
-"""
-@require_http_methods(['PUT'])
-@json_call
-@permission_required('inventory.add_article')
-def v1_article(request):
-    params = request.json
-    if 'subject' not in params or 'body' not in params:
-        return JsonResponse(data={'result': 'required field is missing! {0}'.format(params)}, status=400)
-
-    article = Article()
-    article.subject = params['subject']
-    article.body = params['body']
-    if 'author' in params:
-        article.author = params['author']
-    article.save()
-    return JsonResponse(data={'result': 'ok', 'id': article.id}, status=201)
-"""

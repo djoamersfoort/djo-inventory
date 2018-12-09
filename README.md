@@ -25,18 +25,17 @@ Geeft de complete lijst met items terug
 
 output:
 ```json
+{
  "result": "ok",
  "items": {
-     "1": 
-     {
+     "1": {
         "name": "<Naam van het item>",
         "description": "<Omschrijving van het item>",
         "location": "Locatie van het item (naam)",
         "location_id": "Locatie id van het item",
         "url": "<URL naar beschrijving / spec / docu van dit item"
      },
-     "2":
-     {
+     "2": {
         "name": "<Naam van het 2e item>",
         enz. enz...
      }
@@ -66,5 +65,32 @@ output:
      "location_id": "Locatie id van het item",
      "url": "<URL naar beschrijving / spec / docu van dit item"
   }
+}
+```
+
+
+api/v1/items/search/<str:keyword>
+
+## GET /api/v1/items/search/\<keyword\>
+input: none
+
+output:
+```json
+{
+ "result": "ok",
+ "items": {
+     "1": {
+        "name": "<Naam van het item>",
+        "description": "<Omschrijving van het item>",
+        "location": "Locatie van het item (naam)",
+        "location_description": "Omschrijving van de locatie van het item",
+        "location_id": "Locatie id van het item",
+        "url": "<URL naar beschrijving / spec / docu van dit item"
+     },
+     "2": {
+        "name": "<Naam van het 2e item>",
+        enz. enz...
+     }
+   }
 }
 ```
