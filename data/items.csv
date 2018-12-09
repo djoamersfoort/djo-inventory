@@ -1,0 +1,209 @@
+"id","name","locationid","description","reference"
+1,"2n5088",1,"NPN 30V 50mA","https://components101.com/transistors"
+2,"BD136",1,"PNP 45V 1500mA","https://components101.com/transistors"
+3,"BD138",1,"PNP 60V 1500mA","https://components101.com/transistors"
+4,"BD140",1,"PNP 80V 1500mA","https://components101.com/transistors"
+5,"2n2222",1,"BC547","https://components101.com/transistors"
+6,"BD135",1,"NPN 45V 1500mA","https://components101.com/transistors"
+7,"BD137",1,"NPN 60V 1500mA","https://components101.com/transistors"
+8,"BD139",1,"NPN 80V 1500mA","https://components101.com/transistors"
+9,"BD230",1,"NPN 80V 1500mA","https://components101.com/transistors"
+10,"BC337 / 517 / 639",1,"NPN 45V 800mA / 30V 1200mA / 80V 1000mA","https://components101.com/transistors"
+11,"BC327 / 557 / 640",1,"PNP 45V 800mA / 45V 1000mA / 80V 500mA","https://components101.com/transistors"
+12,"BF199 / 324 / 981",1,"NPN 25V 50mA / PNP 30V 25mA / NchannelMOSFET 20V 20mA","https://components101.com/transistors"
+13,"BC546/547/548/549",1,"NPN 65V 600mA / 45V 600mA / 30V 600mA / 30V 600mA","https://components101.com/transistors"
+15,"MOSfet",1,,"https://components101.com/transistors"
+16,"J fet",1,,"https://components101.com/transistors"
+17,"TLC5940",1,"16channel LEDdriver","https://components101.com/transistors"
+18,"LM3915",1,"VU meter-LEDdriver","https://components101.com/transistors"
+19,"LDR",1,,"https://components101.com/transistors"
+20,"Microfoon",1,,"https://components101.com/transistors"
+21,"optocoupler",1,,"https://components101.com/transistors"
+22,"drukschakelaar",1,,"https://components101.com/transistors"
+23,"xtal20mhz",1,,"https://components101.com/transistors"
+24,"xtal28mhz",1,,"https://components101.com/transistors"
+25,"xtal16mhz",1,,"https://components101.com/transistors"
+26,"max232",1,"Dual EIA-232 / Drivers/Receivers","https://components101.com/transistors"
+27,"LM386",1,"Low Voltage audio power AMP","https://components101.com/transistors"
+28,"PC849",1,"4channel optocoupler","https://components101.com/transistors"
+29,"Uln2803/2003",1,"8 Channel Darlington Driver (Solenoid/Unipolar Stepper) / Darlington transistor array","https://components101.com/transistors"
+31,"koelmateriaal",1,,"https://components101.com/transistors"
+32,"ledhouder",1,,"https://components101.com/transistors"
+33,"Potmeter-stokjes",1,,"https://components101.com/transistors"
+34,"zaagjes",1,,"https://components101.com/transistors"
+35,"pinheaders",1,,"https://components101.com/transistors"
+36,"arduino pinnen",1,,"https://components101.com/transistors"
+37,"Arduino-printjes",1,,"https://components101.com/transistors"
+38,"printconn",1,,"https://components101.com/transistors"
+39,"Weerstand 100kOhm – 10MOhm",2,,
+40,"Condensator 10pF – 820pF",2,,
+41,"Connector COAX",3,,
+42,"Connector SUBd9",3,,
+43,"Connector SUBd9+",3,,
+44,"Connector SUBdhousing",3,,
+45,"zekeringen",3,,
+46,"zekeringhouders",3,,
+47,"netfilters",3,,
+48,"CMOS 4000 02",4,"2x 4inputNOR","https://www.cmos4000.com/"
+49,"CMOS 4000 11",4,"4x NAND","https://www.cmos4000.com/"
+50,"CMOS 4000 12",4,"2x 4inputNAND","https://www.cmos4000.com/"
+51,"CMOS 4000 13",4,"2x Dflipflop","https://www.cmos4000.com/"
+52,"CMOS 4000 14",4,"8bit schuifreg.","https://www.cmos4000.com/"
+53,"CMOS 4000 17",4,"decade counter 10output","https://www.cmos4000.com/"
+54,"CMOS 4000 24",4,"7stage binaire counter","https://www.cmos4000.com/"
+55,"CMOS 4000 27",4,"2x Jkflipflop","https://www.cmos4000.com/"
+56,"CMOS 4000 28",4,"BCD decimal counter","https://www.cmos4000.com/"
+57,"CMOS 4000 29",4,"Up-down-counter","https://www.cmos4000.com/"
+58,"CMOS 4000 30",4,"4x XOR","https://www.cmos4000.com/"
+59,"CMOS 4000 34",4,"8bit bidirectioneel bus-register","https://www.cmos4000.com/"
+60,"CMOS 4000 38",4,"3x serial adder","https://www.cmos4000.com/"
+61,"CMOS 4000 40",4,"12 bit asynchroon binaircounter","https://www.cmos4000.com/"
+62,"CMOS 4000 41",4,"4x ttl-buffer","https://www.cmos4000.com/"
+63,"CMOS 4000 46",4,"PLL","https://www.cmos4000.com/"
+64,"CMOS 4000 47",4,"monostab astabile multivibrator","https://www.cmos4000.com/"
+65,"CMOS 4000 49",4,"6x buffer","https://www.cmos4000.com/"
+66,"CMOS 4000 50",4,"6x invert buffer","https://www.cmos4000.com/"
+67,"CMOS 4000 51",4,"8channel multiplex","https://www.cmos4000.com/"
+68,"CMOS 4000 52",4,"2x 4channel mux","https://www.cmos4000.com/"
+69,"CMOS 4000 53",4,"3x 2channel mux","https://www.cmos4000.com/"
+70,"CMOS 4000 56",4,"bcd-7segment decoder","https://www.cmos4000.com/"
+71,"CMOS 4000 60",4,"14stage counter","https://www.cmos4000.com/"
+72,"CMOS 4000 66",4,"4x switch","https://www.cmos4000.com/"
+73,"CMOS 4000 70",4,"4x XOR","https://www.cmos4000.com/"
+74,"CMOS 4000 71",4,"4x OR","https://www.cmos4000.com/"
+75,"CMOS 4000 72",4,"2x 4input OR","https://www.cmos4000.com/"
+76,"CMOS 4000 73",4,"3x 3inputAND","https://www.cmos4000.com/"
+77,"CMOS 4000 75",4,"3x 3input OR","https://www.cmos4000.com/"
+78,"CMOS 4000 77",4,"4x XNOR","https://www.cmos4000.com/"
+79,"CMOS 4000 81",4,"4x AND leeg","https://www.cmos4000.com/"
+80,"CMOS 4000 82",4,"2x 4intpu AND","https://www.cmos4000.com/"
+81,"CMOS 4000 85",4,"2x ANDORinvertor; zie datasheet","https://www.cmos4000.com/"
+82,"CMOS 4000 86",4,"1x ANDORinvertor; zie datasheet","https://www.cmos4000.com/"
+83,"CMOS 4000 93",4,"4x NAND schmit-trigger","https://www.cmos4000.com/"
+84,"CMOS 4000 94",4,"8stage schuifreg","https://www.cmos4000.com/"
+85,"CMOS 4000 98",4,"2x monostab multivibrator","https://www.cmos4000.com/"
+86,"CMOS 4000 106",4,"6x invert schmitt-trigger","https://www.cmos4000.com/"
+87,"CMOS 4000 109",4,"?","https://www.cmos4000.com/"
+88,"CMOS 4000 175",4,"?","https://www.cmos4000.com/"
+89,"CMOS 4000 192",4,"decimal up/downcounter; geen sheet","https://www.cmos4000.com/"
+90,"CMOS 4000 194",4,"4bit L/R schuifreg. Geen scheet","https://www.cmos4000.com/"
+91,"CMOS 4000 4502",4,"6x 3state-output inverter","https://www.cmos4000.com/"
+92,"CMOS 4000 4510",4,"BCD up/down counter","https://www.cmos4000.com/"
+93,"CMOS 4000 4511",4,"Bcd – 7segment-decoder","https://www.cmos4000.com/"
+94,"CMOS 4000 4512",4," ; 8input mux8channel dataselector","https://www.cmos4000.com/"
+95,"CMOS 4000 4514",4,"4 – 16 decoder; high","https://www.cmos4000.com/"
+96,"CMOS 4000 4516",4,"binaire up/down counter","https://www.cmos4000.com/"
+97,"CMOS 4000 4518",4,"2x bcd up counter","https://www.cmos4000.com/"
+98,"CMOS 4000 4519",4,"4x parallel 2bit counter ; geen datasheet","https://www.cmos4000.com/"
+99,"CMOS 4000 4520",4,"2x binaire upcounter","https://www.cmos4000.com/"
+100,"CMOS 4000 4521",4,"24 bit binaire counter","https://www.cmos4000.com/"
+101,"CMOS 4000 4522",4,"programeerbare 4bit bcd-down-counter","https://www.cmos4000.com/"
+102,"CMOS 4000 4528",4,"2x monostab multivibrator","https://www.cmos4000.com/"
+103,"CMOS 4000 4532",4,"8bit priority encoder","https://www.cmos4000.com/"
+104,"CMOS 4000 4543",4,"bcd 7segment decoder","https://www.cmos4000.com/"
+105,"CMOS 4000 4555",4,"2x 1 – 4 demux","https://www.cmos4000.com/"
+106,"CMOS 4000 4556",4,"2x 1 – 4 demux","https://www.cmos4000.com/"
+107,"CMOS 4000 4585",4,"4bit magnitude comparator","https://www.cmos4000.com/"
+108,"Condensator 1nF – 4700uF",5,"Condensator 1nF – 4700uF",
+109,"uP-IC",6,,
+110,"8155",6,,
+111,"Icvoeten",6,,
+112,"brugcel",6,,
+113,"Reed-contacten",6,,
+114,"LCD-display",6,,
+115,"LEDdisplay",6,,
+116,"Xtal div",6,,
+117,"schuifweerstand",6,,
+118,"array A221J",6,,
+119,"relais 12V 24V",6,,
+120,"analoge meters",6,,
+121,"2n3055",6,"NPN 60V 15A",
+122,"lampjes",6,,
+123,"microswitch",6,,
+124,"kabeltrekontlasting",6,,
+125,"zwart/blauw/rood/oranje",6,,
+126,"Chasis-trekontlasting zwart",6,,
+127,"spoelen groot",7,,
+128,"polymorph korrels",7,,
+129,"Icvoetjes",7,,
+130,"veertjes",7,,
+131,"schotjes",7,,
+132,"testsnoertjes met klem",7,,
+133,"faston krimpconn",7,,
+134,"voedingsstekker laagspanning",7,,
+135,"battclip 9V",7,,
+136,"batthouder 1xAA",7,,
+137,"batthouder 2xAA",7,,
+138,"batthouder 3xAA",7,,
+139,"batthouder 4xAA",7,,
+140,"potmeters",8,,
+141,"50Ohm – 5M Ohm",8,,
+142,"diode",8,,
+143,"1n5408",8,"1000V 3A",
+144,"1n4005/6/7",8,"600V 1A / 800V 1A / 1000V 1A",
+145,"1n4148",8,"100V 150mA",
+146,"vricap",8,,
+147,"bat43",8,"schottky diode",
+148,"1n60 germanium, lage drempelsp.",8,"0,3V 40V 50mA",
+149,"NTC/PTC",8,,
+150,"Opto-coupler",8,,
+151,"MCA231",8,"optocupler",
+152,"MOC3012/MOC3041",8,"optocupler",
+153,"BPW17-array",8,"fototransistor",
+154,"NE555",8,"timer",
+155,"speakertje",8,,
+156,"meerstandenschakelaar",8,,
+157,"dipswitch",8,,
+158,"opamps",8,,
+159,"buizen",8,,
+160,"meerslagen potmeters",8,,
+161,"LEDs",8,,
+162,"groen/geel/rood/oranje/div",8,,
+163,"sp.regelaars",8,,
+164,"LM317",8,"sp.regelaar 1,25V – 37V",
+165,7805,8,"Sp.reg. +5V",
+166,"78xx",8,"Sp.reg. +V",
+167,"79xx",8,"Sp.reg. -5V",
+168,"ML723 / TL431",8,"LM723? sp. Reg. / sp. Reg.",
+169,"TRIAC",8,,
+170,"thyristor",8,,
+171,"Hoogsp, condensators",8,,
+172,"schakelaars groot",9,,
+173,"Meerpolig kabel-conn",9,,
+174,"schakelaars klein",9,,
+175,"lagers",9,,
+176,"schakelaars groot",9,,
+177,"power diode",9,,
+178,"elko groot",9,,
+179,"Plastic condensator div.",9,,
+180,"Print + kabel conn. 32 polig",9,,
+181,"Kast-pootjes",9,,
+182,"power transistor div.",9,,
+183,"relais dev. Spanning/ print en chasis",9,,
+184,"eprom div.",9,,
+185,"potmeter chasis",9,,
+186,"knoppen voor schakelars",9,,
+187,"printpennen",10,,
+188,"RJ45",10,,
+189,"jack",10,,
+190,"wieltjes",10,,
+191,"baj fitting",10,,
+192,"Weerstanden 1 Ohm – 82kOhm",11,,
+193,"spijkers",12,,
+194,"koellichamen",12,,
+195,"Grommet / kabeldoorvoer",12,,
+196,"headers",12,,
+197,"krokodil",12,,
+198,"afstandhouders",12,,
+199,"kroonsteen",12,,
+200,"connectors",12,,
+201,"XLR",12,,
+202,"220V drukknop",12,,
+203,"DIN connectors",12,,
+204,"Jack-plug",12,,
+205,"tulp connector",12,,
+206,"banaan con",12,,
+207,"printconn",12,,
+208,"computerconn",12,,
+209,"IDC con",12,,
+210,"Scart-conn",12,,
