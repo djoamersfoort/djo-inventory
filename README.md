@@ -62,6 +62,7 @@ output:
      "name": "<Naam van het item>",
      "description": "<Omschrijving van het item>",
      "location": "Locatie van het item (naam)",
+     "location_description": "Omschrijving van de locatie van het item",
      "location_id": "Locatie id van het item",
      "url": "<URL naar beschrijving / spec / docu van dit item"
   }

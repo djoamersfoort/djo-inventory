@@ -57,6 +57,7 @@ def v1_get_item_by_id(request, item):
             "name": item.name,
             "description": item.description,
             "location": item.location.name,
+            "location_description": item.location.description,
             "location_id": item.location.id,
             "url": item.url
         }
