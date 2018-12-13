@@ -27,19 +27,21 @@ output:
 ```json
 {
  "result": "ok",
- "items": {
-     "1": {
+ "items": [
+     {
+        "id": "<id van het item>",
         "name": "<Naam van het item>",
         "description": "<Omschrijving van het item>",
         "location": "Locatie van het item (naam)",
         "location_id": "Locatie id van het item",
         "url": "<URL naar beschrijving / spec / docu van dit item"
      },
-     "2": {
+     {
+        "id": "<id van volgend item>",
         "name": "<Naam van het 2e item>",
         enz. enz...
      }
-   }
+   ]
 }
 ```
 
@@ -81,8 +83,9 @@ output:
 ```json
 {
  "result": "ok",
- "items": {
-     "1": {
+ "items": [
+     {
+        "id": "<id van het item>",
         "name": "<Naam van het item>",
         "description": "<Omschrijving van het item>",
         "location": "Locatie van het item (naam)",
@@ -90,11 +93,12 @@ output:
         "location_id": "Locatie id van het item",
         "url": "<URL naar beschrijving / spec / docu van dit item"
      },
-     "2": {
+     {
+        "id": "<id van het 2e item>",
         "name": "<Naam van het 2e item>",
         enz. enz...
      }
-   }
+   ]
 }
 ```
 
@@ -116,3 +120,11 @@ output:
   }
 }
 ```
+
+## GET api/v1/location/\<int:location_id\>/photo
+
+Geef direct een 'image' terug (content-type: image/png). Deze url kun je
+gebruiken in een \<img\ src=''> tag.
+
+output:
+image/png

@@ -1,4 +1,4 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.views.decorators.http import require_GET, require_http_methods
 from .models import Item, Location
 import base64
@@ -9,16 +9,16 @@ from django.db.models import Q
 def v1_items(request):
     items = Item.objects.all()
 
-    results = {}
+    results = []
     for item in items:
-        result = {
+        results.append({
+            "id": item.id,
             "name": item.name,
             "description": item.description,
             "location": item.location.name,
             "location_id": item.location.id,
             "url": item.url
-        }
-        results[item.id] = result
+        })
 
     json_result = {'result': 'ok',
                    'items': results}
@@ -49,9 +49,10 @@ def v1_item_search(request, keyword):
     except Item.DoesNotExist:
         return JsonResponse({'result': 'No items were found!'})
 
-    results = {}
+    results = []
     for item in items:
-        results[item.id] = {
+        results.append(
+        {
             "id": item.id,
             "name": item.name,
             "description": item.description,
@@ -59,7 +60,7 @@ def v1_item_search(request, keyword):
             "location_description": item.location.description,
             "location_id": item.location.id,
             "url": item.url
-        }
+        })
 
     json_result = {'result': 'ok',
                    'items': results}
@@ -106,3 +107,12 @@ def v1_location_by_id(request, location_id):
         }
     }
     return JsonResponse(data=result)
+
+@require_GET
+def v1_location_photo(request, location_id):
+    try:
+        location = Location.objects.get(pk=location_id)
+    except Location.DoesNotExist:
+        return JsonResponse(data={'result': 'No such location!'}, status=404)
+
+    return HttpResponse(content_type='image/png', content=location.photo)
