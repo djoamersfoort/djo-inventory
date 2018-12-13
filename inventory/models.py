@@ -27,7 +27,7 @@ class Location(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=1024, default='')
-    photo = models.BinaryField(max_length=2000000, null=True)
+    photo = models.BinaryField(max_length=2000000, null=True, editable=True)
 
     def __str__(self):
         return "{0} ({1})".format(self.name, self.pk)
