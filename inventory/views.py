@@ -94,7 +94,7 @@ def v1_location_by_id(request, location_id):
 
     b64_photo = None
     if location.photo is not None:
-        b64_photo = base64.encodebytes(location.photo)
+        b64_photo = base64.encodebytes(location.photo).decode('ascii')
 
     result = {
         'result': 'ok',
