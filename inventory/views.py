@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET, require_http_methods
-from .models import Item
+from .models import Item, Location
+import base64
 from django.db.models import Q
 
 
@@ -63,7 +64,7 @@ def v1_item_search(request, keyword):
     json_result = {'result': 'ok',
                    'items': results}
 
-    return  JsonResponse(data=json_result)
+    return JsonResponse(data=json_result)
 
 
 @require_http_methods(['GET', 'POST', 'DELETE'])
@@ -82,3 +83,26 @@ def v1_item_by_id(request, item_id):
     else:
         # Impossible
         return JsonResponse(data={'result': 'huh?'})
+
+
+@require_GET
+def v1_location_by_id(request, location_id):
+    try:
+        location = Location.objects.get(pk=location_id)
+    except Location.DoesNotExist:
+        return JsonResponse(data={'result': 'No such location!'}, status=404)
+
+    b64_photo = None
+    if location.photo is not None:
+        b64_photo = base64.encodebytes(location.photo)
+
+    result = {
+        'result': 'ok',
+        'location': {
+            "id": location.id,
+            "name": location.name,
+            "description": location.description,
+            "photo": b64_photo
+        }
+    }
+    return JsonResponse(data=result)

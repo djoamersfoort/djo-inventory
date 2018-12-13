@@ -52,6 +52,8 @@ curl http://localhost:8000/api/v1/items
 ## GET /api/v1/item/\<id\>
 input: none
 
+Haal de details van 1 item op.
+
 output:
 ```json
 {
@@ -69,10 +71,11 @@ output:
 ```
 
 
-api/v1/items/search/<str:keyword>
-
 ## GET /api/v1/items/search/\<keyword\>
 input: none
+
+Zoek naar items in de database en geef alle matches terug.
+De velden naam en omschrijving worden gematched (geen regex)
 
 output:
 ```json
@@ -92,5 +95,24 @@ output:
         enz. enz...
      }
    }
+}
+```
+
+
+## GET api/v1/location/\<int:location_id\>
+
+Haal de details van een locatie op, inclusief een base64 encoded foto
+(kan je direct in een img src="<base64 troep>" gooien)
+
+output:
+```json
+{
+ "result": "ok",
+ "location": {
+   "id": "<locatie id>",
+   "name": "<Locatie naam",
+   "description": "Omschrijving van de locatie",
+   "photo": "<base64 encoded foto van de locatie"
+  }
 }
 ```

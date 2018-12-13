@@ -1,4 +1,4 @@
 django>=2
 mysqlclient
-Pillow
 gunicorn
+django-cors-headers
