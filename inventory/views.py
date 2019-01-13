@@ -51,15 +51,15 @@ def v1_item_search(request, keyword):
 
     results = []
     for item in items:
-        results.append(
-        {
+        results.append({
             "id": item.id,
             "name": item.name,
             "description": item.description,
             "location": item.location.name,
             "location_description": item.location.description,
             "location_id": item.location.id,
-            "url": item.url
+            "url": item.url,
+            "properties": [prop.name for prop in item.properties]
         })
 
     json_result = {'result': 'ok',
@@ -107,6 +107,7 @@ def v1_location_by_id(request, location_id):
         }
     }
     return JsonResponse(data=result)
+
 
 @require_GET
 def v1_location_photo(request, location_id):
