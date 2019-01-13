@@ -36,7 +36,8 @@ def v1_get_item_by_id(request, item):
             "location": item.location.name,
             "location_description": item.location.description,
             "location_id": item.location.id,
-            "url": item.url
+            "url": item.url,
+            "properties": [prop.name for prop in item.properties.all()]
         }
     }
     return JsonResponse(data=result)
@@ -59,7 +60,7 @@ def v1_item_search(request, keyword):
             "location_description": item.location.description,
             "location_id": item.location.id,
             "url": item.url,
-            "properties": [prop.name for prop in item.properties]
+            "properties": [prop.name for prop in item.properties.all()]
         })
 
     json_result = {'result': 'ok',
