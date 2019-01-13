@@ -129,3 +129,25 @@ gebruiken in een \<img\ src=''> tag.
 
 output:
 image/png
+
+## GET /api/v1/properties:
+input: none
+
+Geeft de complete lijst met properties terug
+
+example output:
+```json
+{
+ "result": "ok",
+ "items": [
+     {
+        "id": "<id van de eigenschap>",
+        "name": "<Naam van de eigenschap>",
+     },
+     {
+        "id": "<id van volgende eigenschap>",
+        "name": "<Naam van de 2e eigenschap",
+     }
+   ]
+}
+```
