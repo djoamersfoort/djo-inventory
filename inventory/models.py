@@ -33,12 +33,18 @@ class Location(models.Model):
         return "{0} ({1})".format(self.name, self.pk)
 
 
+class Property(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+
+
 class Item(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=1024)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     url = models.URLField(verbose_name="Url of item specifications / docs")
+    properties = models.ManyToManyField(Property)
 
     def __str__(self):
         return "{0} ({1})".format(self.name, self.pk)
