@@ -1,6 +1,6 @@
 from django.http import JsonResponse, HttpResponse
-from django.views.decorators.http import require_GET, require_http_methods
-from .models import Item, Location
+from django.views.decorators.http import require_GET
+from .models import Item, Location, Property
 import base64
 from django.db.models import Q
 
@@ -69,7 +69,8 @@ def v1_item_search(request, keyword):
     return JsonResponse(data=json_result)
 
 
-@require_http_methods(['GET', 'POST', 'DELETE'])
+# @require_http_methods(['GET', 'POST', 'DELETE'])
+@require_GET
 def v1_item_by_id(request, item_id):
     try:
         item = Item.objects.get(pk=item_id)
@@ -118,3 +119,16 @@ def v1_location_photo(request, location_id):
         return JsonResponse(data={'result': 'No such location!'}, status=404)
 
     return HttpResponse(content_type='image/png', content=location.photo)
+
+
+@require_GET
+def v1_properties(request):
+    if request.method == 'GET':
+        props = Property.objects.all()
+        result = []
+        for prop in props:
+            result.append({
+                "id": prop.id,
+                "name": prop.name
+            })
+        return JsonResponse(data={'result': 'ok', 'properties': result})

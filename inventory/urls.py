@@ -23,5 +23,6 @@ urlpatterns = [
     path('api/v1/item/<int:item_id>', views.v1_item_by_id),
     path('api/v1/items/search/<str:keyword>', views.v1_item_search),
     path('api/v1/location/<int:location_id>', views.v1_location_by_id),
-    path('api/v1/location/<int:location_id>/photo', views.v1_location_photo)
+    path('api/v1/location/<int:location_id>/photo', views.v1_location_photo),
+    path('api/v1/properties', views.v1_properties)
 ]
