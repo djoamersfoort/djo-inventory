@@ -2,6 +2,7 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.http import require_GET
 from .models import Item, Location, Property
 import base64
+import imghdr
 from django.db.models import Q
 
 
@@ -119,7 +120,11 @@ def v1_location_photo(request, location_id):
     except Location.DoesNotExist:
         return JsonResponse(data={'result': 'No such location!'}, status=404)
 
-    return HttpResponse(content_type='image/png', content=location.photo)
+    image_type = imghdr.what('', location.photo)
+    if image_type is None:
+        return JsonResponse(data={'result': 'This location does not have a valid photo!'}, status=404)
+
+    return HttpResponse(content_type='image/{0}'.format(image_type), content=location.photo)
 
 
 @require_GET
