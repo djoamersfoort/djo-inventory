@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="utf-8">
+        <title>DJO Inventaris zoekmachine</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>DJO Inventaris zoekmachine</h1>
+                <br>
+                <div class="input-field col s4">
+                    <input type="text" id="search">
+                    <label for="search">Zoekopdracht</label>
+                </div>
+                <div class="col s2">
+                    <a id="search-btn" class="waves-effect waves-light btn btn-large">
+                        <i class="material-icons left">search</i>
+                        Go
+                    </a>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s9">
+                    <table id="results" class="highlight">
+                        <thead>
+                            <tr>
+                                <th>Naam</th>
+                                <th>Omschrijving</th>
+                                <th>URL</th>
+                                <th>Locatie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>kutzooi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col s3">
+                    <div id="location" class="card">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="oopsie-woopsie" class="modal">
+            <div class="modal-content">
+                <h4>Oepsie woepsie!</h4>
+                <p>De applicatie ging stukkie wukkie!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+                    Oei, wat vervelend
+                </a>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+#results tbody tr {
+    cursor: pointer;
+}
+
+#location {
+    position: sticky;
+}
