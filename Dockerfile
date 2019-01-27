@@ -4,6 +4,7 @@ FROM python:3.6-alpine
 MAINTAINER Ronald Moesbergen
 
 COPY inventory /srv/inventory/inventory/
+COPY UI/* /srv/ui/
 COPY manage.py requirements.txt /srv/inventory/
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/docker-entrypoint.sh /
