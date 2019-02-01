@@ -31,7 +31,8 @@ function renderList(items) {
         <td>${item.name}</td>
         <td>${item.description}</td>
         <td>${item.url}</td>
-        <td>${item.location}</td>`
+        <td>${item.location}</td>
+        <td>${item.properties}</td>`
         // record.setAttribute("data-location-id", item.location_id)
         record.onclick = () => {
             showLocation(item.location_id)
@@ -58,6 +59,7 @@ function search() {
         renderList([])
         return
     }
+    if (query.length < 3) return;
     fetch(API.get.itemSearch(query))
         .then(response => response.json())
         .then(result => {
