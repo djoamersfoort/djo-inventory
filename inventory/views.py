@@ -47,8 +47,10 @@ def v1_get_item_by_id(request, item):
 @require_GET
 def v1_item_search(request, keyword):
     try:
+        keywords = keyword.split()
+        print(keywords)
         items = Item.objects.filter(
-            Q(name__icontains=keyword) | Q(description__icontains=keyword) | Q(properties__name__icontains=keyword))
+            Q(name__icontains=keywords) | Q(description__icontains=keywords) | Q(properties__name__icontains=keywords))
     except Item.DoesNotExist:
         return JsonResponse({'result': 'No items were found!'})
 
