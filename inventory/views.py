@@ -3,6 +3,8 @@ from django.views.decorators.http import require_GET
 from .models import Item, Location, Property
 import base64
 import imghdr
+import operator
+from functools import reduce
 from django.db.models import Q
 
 
@@ -48,9 +50,10 @@ def v1_get_item_by_id(request, item):
 def v1_item_search(request, keyword):
     try:
         keywords = keyword.split()
-        print(keywords)
-        items = Item.objects.filter(
-            Q(name__icontains=keywords) | Q(description__icontains=keywords) | Q(properties__name__icontains=keywords))
+        query = reduce(operator.and_,
+                       [Q(name__icontains=word) | Q(description__icontains=word) | Q(properties__name__icontains=word)
+                        for word in keywords])
+        items = Item.objects.filter(query).distinct()
     except Item.DoesNotExist:
         return JsonResponse({'result': 'No items were found!'})
 
