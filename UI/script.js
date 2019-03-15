@@ -23,7 +23,6 @@ const API = {
 
 function renderList(items) {
     const list = document.querySelector("#results tbody")
-    console.log(items)
     list.innerHTML = ""
     for (let item of items) {
         const record = document.createElement("tr")
@@ -78,7 +77,6 @@ function showLocation(id) {
     fetch(API.get.location(id))
         .then(response => response.json())
         .then(result => {
-            console.log(result)
             if (result.result === "ok") {
                 renderLocation(result.location)
             } else {
