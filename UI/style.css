@@ -3,5 +3,5 @@
 }
 
 #location {
-    position: sticky;
+    transform: translate(10px, -7px);
 }
