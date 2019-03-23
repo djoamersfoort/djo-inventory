@@ -1,6 +1,6 @@
 "use strict"
 
-const URL = "https://djoinventory.rmoesbergen.nl"
+const URL = "https://inventory.djoamersfoort.nl"
 const API = {
     get: {
         items() {
