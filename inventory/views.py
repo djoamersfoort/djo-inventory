@@ -125,6 +125,9 @@ def v1_location_photo(request, location_id):
     except Location.DoesNotExist:
         return JsonResponse(data={'result': 'No such location!'}, status=404)
 
+    if location.photo is None:
+        return JsonResponse(data={'result': 'This location does not have a valid photo!'}, status=404)
+
     image_type = imghdr.what('', location.photo)
     if image_type is None:
         return JsonResponse(data={'result': 'This location does not have a valid photo!'}, status=404)
