@@ -16,7 +16,7 @@ RUN apk update && \
     apk del gcc musl-dev
 
 WORKDIR /srv
-RUN mkdir static logs /run/nginx
+RUN mkdir static logs
 
 # Port to expose
 EXPOSE 80
