@@ -1,11 +1,13 @@
-from django.http import JsonResponse, HttpResponse
-from django.views.decorators.http import require_GET
-from .models import Item, Location, Property
 import base64
 import imghdr
 import operator
 from functools import reduce
+
 from django.db.models import Q
+from django.http import JsonResponse, HttpResponse
+from django.views.decorators.http import require_GET
+
+from inventory.models import Item, Location, Property
 
 
 @require_GET
@@ -75,8 +77,6 @@ def v1_item_search(request, keyword):
 
     return JsonResponse(data=json_result)
 
-
-# @require_http_methods(['GET', 'POST', 'DELETE'])
 @require_GET
 def v1_item_by_id(request, item_id):
     try:
@@ -86,10 +86,6 @@ def v1_item_by_id(request, item_id):
 
     if request.method == 'GET':
         return v1_get_item_by_id(request, item)
-    #    elif request.method == 'POST':
-    #        return v1_post_article_by_id(request, article)
-    #    elif request.method == 'DELETE':
-    #        return v1_delete_article_by_id(request, article)
     else:
         # Impossible
         return JsonResponse(data={'result': 'huh?'})
