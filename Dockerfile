@@ -1,16 +1,12 @@
-FROM python:3.11-slim
-
-# Set the file maintainer (your name - the file's author)
-MAINTAINER Ronald Moesbergen
+FROM python:3.12-slim
 
 COPY inventory /srv/inventory/inventory/
 COPY UI/* /srv/ui/
 COPY manage.py requirements.txt /srv/inventory/
 COPY docker/docker-entrypoint.sh /
 
-RUN apt-get -y update && apt-get -y install build-essential pkg-config nginx libmariadb-dev && apt-get clean && \
-    pip3 install --no-cache-dir -r /srv/inventory/requirements.txt && \
-    apt-get -y purge build-essential pkg-config && apt-get -y autoremove --purge build-essential
+RUN apt-get -y update && apt-get -y install nginx libmariadb-dev && apt-get clean && \
+    pip3 install --no-cache-dir -r /srv/inventory/requirements.txt
 
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 
