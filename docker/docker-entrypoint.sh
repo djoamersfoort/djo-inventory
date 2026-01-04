@@ -1,4 +1,7 @@
 #!/bin/sh
+
+. /srv/venv/bin/activate
+
 python3 manage.py migrate                  # Apply database migrations
 python3 manage.py collectstatic --noinput # Collect static files
 
